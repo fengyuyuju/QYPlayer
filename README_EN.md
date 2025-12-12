@@ -21,35 +21,6 @@ The project uses the GetX framework for reactive state management and dependency
 | **JSON Serialization** | json_serializable 6.9.4 | Data model code generation |
 | **Internationalization** | flutter_localizations + Intl | Multi-language support |
 
-## Architecture Overview
-
-The project uses a **GetX MVC/MVVM hybrid architecture**:
-
-- **Model Layer**: Data classes in the `lib/bean/` directory, serialized using json_serializable
-- **View Layer**: UI components in `lib/page/` and `lib/widget/`, using Obx to respond to state changes
-- **Controller Layer**: GetxController in `lib/controller/`, managing business logic
-- **State Layer**: Singleton state classes in `lib/state/` (GlobalState, AudioState)
-- **Service Layer**: Audio processing services in `lib/service/`
-
-## Directory Structure
-
-```
-lib/
-├── bean/           # Data models (42 JSON serializable entities)
-├── controller/     # Business logic controllers (11 files)
-├── state/          # Global singleton states (GlobalState, AudioState)
-├── page/           # Page components (9 pages)
-├── widget/         # Reusable UI components (24 components)
-├── service/        # Service layer (BookAudioHandler)
-├── util/           # Utility functions (12 files)
-├── anim/           # Animation definitions
-├── l10n/           # Internationalization resources
-├── generated/      # Code generation output
-├── main.dart       # Application entry point
-├── route.dart      # Route configuration
-└── binding.dart    # Dependency injection configuration
-```
-
 ## Key Features
 
 - **Audiobook Playback**: Chapter navigation, progress tracking, playback speed adjustment (0.1x-2.0x)
